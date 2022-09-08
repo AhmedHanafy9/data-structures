@@ -5,31 +5,25 @@ var Queue = function() {
     head: 0,
     tail: 0,
     storage: {},
-    enqueue: queueMethods.enqueue,
-    dequeue: queueMethods.dequeue,
-    size: queueMethods.size
   }
+  _.extend(instance, queueMethods);
   return instance;
 };
 
-var queueMethods = {};
-
-queueMethods.enqueue = function(value) {
-  this.storage[this.tail] = value;
-  this.tail++;
-}
-
-queueMethods.dequeue = function() {
-  if (this.size() !== 0) {
-    var value = this.storage[this.head];
-    delete this.storage[this.head];
-    this.head++;
-    return value;
+var queueMethods = {
+  enqueue: function(value) {
+    this.storage[this.tail] = value;
+    this.tail++;
+  },
+  dequeue: function() {
+    if (this.size() !== 0) {
+      var value = this.storage[this.head];
+      delete this.storage[this.head];
+      this.head++;
+      return value;
+    }
+  },
+  size: function() {
+    return this.tail - this.head;
   }
-}
-
-queueMethods.size = function () {
-  return this.tail - this.head;
-}
-
-
+};

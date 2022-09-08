@@ -3,32 +3,26 @@ var Stack = function() {
   // but try not not reference your old code in writing the new style.
   var instance = {
     stackIndex: 0,
-    storage: {},
-    push: stackMethods.push,
-    pop: stackMethods.pop,
-    size: stackMethods.size
+    storage: {}
   }
+  _.extend(instance, stackMethods)
   return instance;
 };
 
-var stackMethods = {};
-
-stackMethods.push = function(value) {
-  this.storage[this.stackIndex] = value;
-  this.stackIndex++;
-}
-
-stackMethods.pop = function() {
-  if (this.stackIndex > 0) {
-    this.stackIndex--;
-    var value = this.storage[this.stackIndex];
-    delete this.storage[this.stackIndex];
-    return value;
+var stackMethods = {
+  push: function(value) {
+    this.storage[this.stackIndex] = value;
+    this.stackIndex++;
+  },
+  pop: function() {
+    if (this.stackIndex > 0) {
+      this.stackIndex--;
+      var value = this.storage[this.stackIndex];
+      delete this.storage[this.stackIndex];
+      return value;
+    }
+  },
+  size: function() {
+    return this.stackIndex
   }
-}
-
-stackMethods.size = function() {
-  return this.stackIndex
 };
-
-
