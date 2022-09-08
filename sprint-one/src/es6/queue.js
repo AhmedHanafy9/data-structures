@@ -23,5 +23,5 @@ class Queue {
 
   size() {
     return this.tail - this.head;
-  }
+  };
 }
