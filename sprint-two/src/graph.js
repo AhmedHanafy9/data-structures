@@ -59,6 +59,11 @@ Graph.prototype.forEachNode = function(cb) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+  adding - O(1)
+  retrieval - O(1)
+  removing - O(log n)
+  for each node - O(n)
+  edges - O(1) lookup time, insertion time, and removal time
  */
 
 var graph = Graph()
