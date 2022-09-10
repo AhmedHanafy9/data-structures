@@ -26,3 +26,6 @@ var stackMethods = {
     return this.stackIndex
   }
 };
+
+
+
