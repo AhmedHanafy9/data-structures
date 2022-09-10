@@ -30,6 +30,7 @@ HashTable.prototype.retrieve = function(k) {
   }
 };
 
+
 HashTable.prototype.remove = function(k) {
   var index = getIndexBelowMaxForKey(k, this._limit);
   var bucket = this._storage.get(index);
@@ -42,7 +43,7 @@ HashTable.prototype.remove = function(k) {
 
 
 /*
- * Complexity: What is the time complexity of the above functions?
+ * Complexity: What is the time complexity of the above functions? O(1), worst case scenario is O(n) (anytime we have to resize)
  */
 
 
