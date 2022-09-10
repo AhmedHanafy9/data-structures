@@ -61,11 +61,3 @@ Graph.prototype.forEachNode = function(cb) {
  * Complexity: What is the time complexity of the above functions?
  */
 
-var graph = Graph()
-graph.addNode(4);
-graph.addNode(5);
-graph.addEdge(5, 4);
-// console.log(graph.hasEdge(4, 5)) // true
-graph.removeNode(5);
-// console.log(graph.hasEdge(4, 5)) // false
-// console.log(graph.removeNode(5))
