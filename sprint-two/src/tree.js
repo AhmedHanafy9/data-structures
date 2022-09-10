@@ -1,3 +1,5 @@
+// _ = require("underscore")
+
 var Tree = function(value) {
   var newTree = {};
   newTree.value = value;
@@ -38,7 +40,24 @@ treeMethods.contains = function(target) {
   return false;
 };
 
-
 /*
  * Complexity: What is the time complexity of the above functions?
  */
+
+var tree = Tree();
+
+
+// top
+tree.addChild(5);
+tree.addChild(6);
+
+//children of the top
+tree.children[0].addChild(7);
+tree.children[1].addChild(8);
+
+
+console.log(tree.contains(7))// true
+console.log(tree.contains(8))// true
+
+
+
